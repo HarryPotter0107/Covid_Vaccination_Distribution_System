@@ -13,5 +13,4 @@ import java.util.UUID;
 public class CreateAppointmentDTO {
     UUID id;
     VaccinationCenterPrefrence vaccinationCenterPrefrence;
-
 }

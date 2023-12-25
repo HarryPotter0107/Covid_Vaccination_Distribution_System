@@ -4,37 +4,38 @@ import jakarta.persistence.*;
 
 import java.util.List;
 import java.util.UUID;
+
 @Entity
 public class VaccinationCenter {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
-
     String name;
     String type;
     int covaxinCount;
     int covishieldCount;
     int sputnikCount;
-    int patientCount;
+    int patientsCount;
     int doctorCount;
     String address;
     @OneToMany(mappedBy = "vaccinationCenter")
-    List<Doctor>doctors;
+    List<Doctor> doctors;
 
-    public VaccinationCenter() {
-    }
-
-    public VaccinationCenter(UUID id, String name, String type, int covaxinCount, int covishieldCount, int sputnikCount, int patientCount, int doctorCount, String address, List<Doctor> doctors) {
+    public VaccinationCenter(UUID id, String name, String type, int covaxinCount, int covishieldCount, int sputnikCount, int patientsCount, int doctorCount, String address, List<Doctor> doctors) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.covaxinCount = covaxinCount;
         this.covishieldCount = covishieldCount;
         this.sputnikCount = sputnikCount;
-        this.patientCount = patientCount;
+        this.patientsCount = patientsCount;
         this.doctorCount = doctorCount;
         this.address = address;
         this.doctors = doctors;
+    }
+
+    public VaccinationCenter() {
     }
 
     public UUID getId() {
@@ -85,12 +86,12 @@ public class VaccinationCenter {
         this.sputnikCount = sputnikCount;
     }
 
-    public int getPatientCount() {
-        return patientCount;
+    public int getPatientsCount() {
+        return patientsCount;
     }
 
-    public void setPatientCount(int patientCount) {
-        this.patientCount = patientCount;
+    public void setPatientsCount(int patientsCount) {
+        this.patientsCount = patientsCount;
     }
 
     public int getDoctorCount() {

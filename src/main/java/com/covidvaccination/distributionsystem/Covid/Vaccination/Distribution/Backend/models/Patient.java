@@ -4,12 +4,13 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;
+
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
-@Data
 @Entity
 public class Patient {
     @Id
@@ -20,13 +21,11 @@ public class Patient {
     @Column(unique = true)
     String aadharNumber;
     int doseCount;
-    String VaccinationPrefrence;
+    String vaccinationPrefrence;
     String address;
     @Column(unique = true)
     long phoneNumber;
     @Column(unique = true)
     String email;
     String password;
-
 }
-
